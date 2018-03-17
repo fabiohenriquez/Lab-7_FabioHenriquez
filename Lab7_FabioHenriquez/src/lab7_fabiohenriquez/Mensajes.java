@@ -109,7 +109,7 @@ public class Mensajes extends Thread {
             if (avanzar) {
                 Object[] newrow = {
                     titulo,
-                   "Switch" ,r_transmision,est};
+                   "Switch" ,(r_transmision/1000),est};
                 DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
                 modelo.addRow(newrow);
                 tabla.setModel(modelo);

@@ -348,15 +348,13 @@ public class principal extends javax.swing.JFrame {
                     .addGroup(jPanel17Layout.createSequentialGroup()
                         .addGap(47, 47, 47)
                         .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton9)
-                            .addGroup(jPanel17Layout.createSequentialGroup()
-                                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(m_titulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(m_ip_destino1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(m_ip_origen1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(m_titulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(m_ip_destino1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(m_ip_origen1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton9))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(127, Short.MAX_VALUE))
         );
         jPanel17Layout.setVerticalGroup(
@@ -383,9 +381,9 @@ public class principal extends javax.swing.JFrame {
                             .addComponent(jLabel38)
                             .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(56, 56, 56)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addComponent(jButton9)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jTabbedPane3.addTab("Ventana de Mensajes", jPanel17);
@@ -919,7 +917,8 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-    r = new router(vs_ip.getText(),
+        JOptionPane.showMessageDialog(s1,"Router Creado");
+        r = new router(vs_ip.getText(),
                 vs_mascara.getText(),
                 vs_protocolo.getText(),
                 Integer.parseInt(vs_vt.getText()),
@@ -933,7 +932,8 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
-      pc.add(new pc(vspc_ip.getText(),vspc_mascara.getText()));
+        JOptionPane.showMessageDialog(s1, "PC CREADO");
+        pc.add(new pc(vspc_ip.getText(),vspc_mascara.getText()));
       Object[] newrow = {
                 "PC",
                 vspc_ip.getText(),r.getIp(),};
@@ -971,8 +971,8 @@ public class principal extends javax.swing.JFrame {
 
     private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
         System.out.println(r1.toString());
-        Mensajes men1 = new Mensajes(lista_switch.get(1).getV_transmision(),
-               lista_switch.get(1).getV_recepcion(),
+        Mensajes men1 = new Mensajes((lista_switch.get(1).getV_transmision()*1000),
+               (lista_switch.get(1).getV_recepcion()*1000),
                r1.getVr(),
                r1.getVt(),
                m1,
@@ -987,8 +987,8 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton8MouseClicked
 
     private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
-       Mensajes menc = new Mensajes(lista_switch.get(0).getV_transmision(),
-               lista_switch.get(0).getV_recepcion(),
+       Mensajes menc = new Mensajes((lista_switch.get(0).getV_transmision()*1000),
+               (lista_switch.get(0).getV_recepcion()*1000),
                r.getVr(),
                r.getVt(),
                m2,
