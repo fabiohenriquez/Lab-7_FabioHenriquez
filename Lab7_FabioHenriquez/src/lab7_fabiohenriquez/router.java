@@ -7,13 +7,13 @@ public class router {
     private String ip;
     private String mascara;
     private String protocolo;
-    private double vt;
-    private double vr;
+    private int vt;
+    private int vr;
 
     public router() {
     }
 
-    public router(String ip, String mascara, String protocolo, double vt, double vr) {
+    public router(String ip, String mascara, String protocolo, int vt, int vr) {
         this.ip = ip;
         this.mascara = mascara;
         this.protocolo = protocolo;
@@ -45,21 +45,27 @@ public class router {
         this.protocolo = protocolo;
     }
 
-    public double getVt() {
+    public int getVt() {
         return vt;
     }
 
-    public void setVt(double vt) {
+    public void setVt(int vt) {
         this.vt = vt;
     }
 
-    public double getVr() {
+    public int getVr() {
         return vr;
     }
 
-    public void setVr(double vr) {
+    public void setVr(int vr) {
         this.vr = vr;
     }
+
+    @Override
+    public String toString() {
+        return "router{" + "ip=" + ip + ", mascara=" + mascara + ", protocolo=" + protocolo + ", vt=" + vt + ", vr=" + vr + '}';
+    }
+    
     
     
 }

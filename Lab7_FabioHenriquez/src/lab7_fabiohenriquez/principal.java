@@ -10,6 +10,7 @@ import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -60,7 +61,20 @@ public class principal extends javax.swing.JFrame {
         vspc_ip = new javax.swing.JTextField();
         vspc_mascara = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
-        jPanel8 = new javax.swing.JPanel();
+        jPanel17 = new javax.swing.JPanel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        m_ip_destino1 = new javax.swing.JTextField();
+        m_titulo1 = new javax.swing.JTextField();
+        m_ip_origen1 = new javax.swing.JTextField();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        m_contenido1 = new javax.swing.JTextArea();
+        jButton9 = new javax.swing.JButton();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        m2 = new javax.swing.JTable();
         s2 = new javax.swing.JFrame();
         jPanel2 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
@@ -141,7 +155,7 @@ public class principal extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(46, 46, 46)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addContainerGap(262, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,7 +235,7 @@ public class principal extends javax.swing.JFrame {
                                 .addComponent(vspc_ip, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                                 .addComponent(jLabel18)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 204, Short.MAX_VALUE)
                                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jButton5)
                                     .addComponent(vspc_mascara, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))))
@@ -239,7 +253,7 @@ public class principal extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createSequentialGroup()
                     .addGap(20, 20, 20)
                     .addComponent(jLabel12)
-                    .addContainerGap(568, Short.MAX_VALUE)))
+                    .addContainerGap(730, Short.MAX_VALUE)))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -285,18 +299,96 @@ public class principal extends javax.swing.JFrame {
 
         jTabbedPane3.addTab("Gestionar", jPanel7);
 
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 598, Short.MAX_VALUE)
+        jLabel34.setText("Mensaje");
+
+        jLabel35.setText("IP Origen");
+
+        jLabel36.setText("IP Destino");
+
+        jLabel37.setText("Titulo");
+
+        jLabel38.setText("Contenido");
+
+        m_contenido1.setColumns(20);
+        m_contenido1.setRows(5);
+        jScrollPane12.setViewportView(m_contenido1);
+
+        jButton9.setText("Enviar");
+        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton9MouseClicked(evt);
+            }
+        });
+
+        m2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Titulo", "Dispositivo", "Tiempo", "Estado"
+            }
+        ));
+        jScrollPane13.setViewportView(m2);
+
+        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
+        jPanel17.setLayout(jPanel17Layout);
+        jPanel17Layout.setHorizontalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel36)
+                    .addComponent(jLabel35)
+                    .addComponent(jLabel37)
+                    .addComponent(jLabel38))
+                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel17Layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(jLabel34))
+                    .addGroup(jPanel17Layout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton9)
+                            .addGroup(jPanel17Layout.createSequentialGroup()
+                                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(m_titulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(m_ip_destino1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(m_ip_origen1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 368, Short.MAX_VALUE)
+        jPanel17Layout.setVerticalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabel34)
+                .addGap(44, 44, 44)
+                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel17Layout.createSequentialGroup()
+                        .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel35)
+                            .addComponent(m_ip_origen1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel36)
+                            .addComponent(m_ip_destino1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27)
+                        .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel37)
+                            .addComponent(m_titulo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel38)
+                            .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(56, 56, 56)
+                .addComponent(jButton9)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane3.addTab("Ventana de Mensajes", jPanel8);
+        jTabbedPane3.addTab("Ventana de Mensajes", jPanel17);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -325,7 +417,7 @@ public class principal extends javax.swing.JFrame {
         s1.getContentPane().setLayout(s1Layout);
         s1Layout.setHorizontalGroup(
             s1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 642, Short.MAX_VALUE)
+            .addGap(0, 804, Short.MAX_VALUE)
             .addGroup(s1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(s1Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -519,6 +611,11 @@ public class principal extends javax.swing.JFrame {
         jScrollPane10.setViewportView(m_contenido);
 
         jButton8.setText("Enviar");
+        jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton8MouseClicked(evt);
+            }
+        });
 
         m1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -784,7 +881,7 @@ public class principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 579, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -797,14 +894,15 @@ public class principal extends javax.swing.JFrame {
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         
         lista_switch.add(new c_switch(s_nombre.getText(),
-                Double.parseDouble(s_vt.getText()),
-                Double.parseDouble(s_vr.getText())
+                Integer.parseInt(s_vt.getText()),
+                Integer.parseInt(s_vr.getText())
         ));
         c_switch es = new c_switch();
         es.setNombre(s_nombre.getText());
         DefaultListModel modelo = (DefaultListModel) l_sw.getModel();
         modelo.addElement(es);
         l_sw.setModel(modelo);//l_sw.add(lista_switch.get(0));
+        JOptionPane.showMessageDialog(this,"Switch Creado");
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
@@ -824,8 +922,8 @@ public class principal extends javax.swing.JFrame {
     r = new router(vs_ip.getText(),
                 vs_mascara.getText(),
                 vs_protocolo.getText(),
-                Double.parseDouble(vs_vt.getText()),
-                Double.parseDouble(vs_vr.getText()));
+                Integer.parseInt(vs_vt.getText()),
+                Integer.parseInt(vs_vr.getText()));
      Object[] newrow = {
                 "Router",
                 vs_ip.getText()," ",};
@@ -845,11 +943,13 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5MouseClicked
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        JOptionPane.showMessageDialog(s2,"Router Creado");
         r1 = new router(vs_ip1.getText(),
                 vs_mascara1.getText(),
                 vs_protocolo1.getText(),
-                Double.parseDouble(vs_vt1.getText()),
-                Double.parseDouble(vs_vr1.getText()));
+                Integer.parseInt(vs_vt1.getText()),
+                Integer.parseInt(vs_vr1.getText()));
+        
      Object[] newrow = {
                 "Router",
                 vs_ip1.getText()," ",};
@@ -859,6 +959,7 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6MouseClicked
 
     private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
+       JOptionPane.showMessageDialog(s2,"PC Creado");
         pc1.add(new pc(vspc_ip1.getText(),vspc_mascara1.getText()));
       Object[] newrow = {
                 "PC",
@@ -867,6 +968,32 @@ public class principal extends javax.swing.JFrame {
             modelo.addRow(newrow);
             s2_tabla.setModel(modelo);
     }//GEN-LAST:event_jButton7MouseClicked
+
+    private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
+        System.out.println(r1.toString());
+        Mensajes men1 = new Mensajes(lista_switch.get(1),r,m1,
+               m_ip_origen.getText(),
+               m_ip_destino.getText(),
+               m_titulo.getText(),
+               m_contenido.getText())
+               ;
+       JOptionPane.showMessageDialog(s2,"Mensaje Enviado");
+       Thread proceso1 = new Thread(men1);
+       proceso1.start();
+    }//GEN-LAST:event_jButton8MouseClicked
+
+    private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
+       Mensajes menc = new Mensajes(lista_switch.get(0),r,m2,
+               m_ip_origen1.getText(),
+               m_ip_destino1.getText(),
+               m_titulo1.getText(),
+               m_contenido1.getText())
+               ;
+       JOptionPane.showMessageDialog(s1,"Mensaje Enviado");
+       
+       Thread proceso1 = new Thread(menc);
+       proceso1.start();
+    }//GEN-LAST:event_jButton9MouseClicked
 
     /**
      * @param args the command line arguments
@@ -912,6 +1039,7 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -939,6 +1067,11 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -953,16 +1086,18 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -983,10 +1118,15 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JList<String> l_sw;
     private javax.swing.JPanel lan;
     private javax.swing.JTable m1;
+    private javax.swing.JTable m2;
     private javax.swing.JTextArea m_contenido;
+    private javax.swing.JTextArea m_contenido1;
     private javax.swing.JTextField m_ip_destino;
+    private javax.swing.JTextField m_ip_destino1;
     private javax.swing.JTextField m_ip_origen;
+    private javax.swing.JTextField m_ip_origen1;
     private javax.swing.JTextField m_titulo;
+    private javax.swing.JTextField m_titulo1;
     private javax.swing.JTextField p_r1;
     private javax.swing.JTextField p_r2;
     private javax.swing.JFrame s1;
@@ -1024,6 +1164,7 @@ ArrayList<pc> pc = new ArrayList();
 router r1;
 ArrayList<pc> pc1 = new ArrayList();
 ArrayList<Mensajes> men = new ArrayList();
+Mensajes men1;
 
 
 

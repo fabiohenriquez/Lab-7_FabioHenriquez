@@ -4,15 +4,15 @@ package lab7_fabiohenriquez;
 
 public class c_switch {
     private String nombre;
-    private double v_transmision;
-    private double v_recepcion;
+    private int v_transmision;
+    private int v_recepcion;
 
     public c_switch() {
     }
 
     
     
-    public c_switch(String nombre, double v_transmision, double v_recepcion) {
+    public c_switch(String nombre, int v_transmision, int v_recepcion) {
         this.nombre = nombre;
         this.v_transmision = v_transmision;
         this.v_recepcion = v_recepcion;
@@ -26,19 +26,19 @@ public class c_switch {
         this.nombre = nombre;
     }
 
-    public double getV_transmision() {
+    public int getV_transmision() {
         return v_transmision;
     }
 
-    public void setV_transmision(double v_transmision) {
+    public void setV_transmision(int v_transmision) {
         this.v_transmision = v_transmision;
     }
 
-    public double getV_recepcion() {
+    public int getV_recepcion() {
         return v_recepcion;
     }
 
-    public void setV_recepcion(double v_recepcion) {
+    public void setV_recepcion(int  v_recepcion) {
         this.v_recepcion = v_recepcion;
     }
 

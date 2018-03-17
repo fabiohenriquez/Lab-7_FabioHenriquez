@@ -23,22 +23,30 @@ public class Mensajes extends Thread {
     private String contenido;
      private boolean avanzar;
     private boolean vive;
+    private boolean avanzar_r;
+    private boolean avanzar_pc;
     private boolean estado = false;
     private JTable tabla;
     private router r;
-    private ArrayList<pc> pcs = new ArrayList();
+    private c_switch c;
+    
     //private File archivo = new File("./mensajes.txt");
 
     public Mensajes() {
     }
 
-    public Mensajes(String ip_origen, String ip_destino, String titutlo, String contenido) {
+    public Mensajes(c_switch c,router r,JTable tabla,String ip_origen, String ip_destino, String titutlo, String contenido) {
+       this.tabla = tabla;
         this.ip_origen = ip_origen;
         this.ip_destino = ip_destino;
         this.titulo = titutlo;
         this.contenido = contenido;
+        this.r = r;
+        this.c = c;
         avanzar = true;
         vive = true;
+        avanzar_r = true;
+        avanzar_pc = true;
         
     }
 
@@ -74,22 +82,54 @@ public class Mensajes extends Thread {
         this.contenido = contenido;
     }
 
+    public JTable getTabla() {
+        return tabla;
+    }
+
+    public void setTabla(JTable tabla) {
+        this.tabla = tabla;
+    }
+    
+
+    
     @Override
     public void run() {
+        String est="Entregado";
+        
+        
         while (vive) {
+             try {
+                    Thread.sleep(c.getV_recepcion());
+                } catch (InterruptedException e) {
+                }
             if (avanzar) {
                 Object[] newrow = {
                     titulo,
-                   "Router" + r.getIp(),};
+                   "Switch" ,r.getVt(),est};
                 DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
                 modelo.addRow(newrow);
                 tabla.setModel(modelo);
 
                 try {
-                    Thread.sleep(0);
+                    Thread.sleep(r.getVr());
                 } catch (InterruptedException e) {
                 }
             }
+            avanzar = false;
+            if(avanzar_pc){
+                Object[] newrow = {
+                    titulo,
+                   "PC","" ,"",est};
+                DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
+                modelo.addRow(newrow);
+                tabla.setModel(modelo);
+
+                try {
+                    Thread.sleep(c.getV_transmision());
+                } catch (InterruptedException e) {
+                }
+            }
+            avanzar_pc = false;
             estado = true;
         }
     }
