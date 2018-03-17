@@ -27,22 +27,26 @@ public class Mensajes extends Thread {
     private boolean avanzar_pc;
     private boolean estado = false;
     private JTable tabla;
-    private router r;
-    private c_switch c;
+    private int s_transmision;
+    private int s_receptor;
+    private int r_receptor;
+    private int r_transmision;
     
     //private File archivo = new File("./mensajes.txt");
 
     public Mensajes() {
     }
 
-    public Mensajes(c_switch c,router r,JTable tabla,String ip_origen, String ip_destino, String titutlo, String contenido) {
+    public Mensajes(int s_transmision,int s_receptor,int r_receptor,int r_transmision,JTable tabla,String ip_origen, String ip_destino, String titutlo, String contenido) {
        this.tabla = tabla;
         this.ip_origen = ip_origen;
         this.ip_destino = ip_destino;
         this.titulo = titutlo;
         this.contenido = contenido;
-        this.r = r;
-        this.c = c;
+        this.s_transmision = s_transmision;
+        this.s_receptor = s_receptor;
+        this.r_transmision = r_transmision;
+        this.r_receptor = r_receptor;
         avanzar = true;
         vive = true;
         avanzar_r = true;
@@ -99,19 +103,19 @@ public class Mensajes extends Thread {
         
         while (vive) {
              try {
-                    Thread.sleep(c.getV_recepcion());
+                    Thread.sleep(s_receptor);
                 } catch (InterruptedException e) {
                 }
             if (avanzar) {
                 Object[] newrow = {
                     titulo,
-                   "Switch" ,r.getVt(),est};
+                   "Switch" ,r_transmision,est};
                 DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
                 modelo.addRow(newrow);
                 tabla.setModel(modelo);
 
                 try {
-                    Thread.sleep(r.getVr());
+                    Thread.sleep(r_receptor);
                 } catch (InterruptedException e) {
                 }
             }
@@ -125,7 +129,7 @@ public class Mensajes extends Thread {
                 tabla.setModel(modelo);
 
                 try {
-                    Thread.sleep(c.getV_transmision());
+                    Thread.sleep(s_transmision);
                 } catch (InterruptedException e) {
                 }
             }

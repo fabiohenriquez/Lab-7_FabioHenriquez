@@ -971,11 +971,15 @@ public class principal extends javax.swing.JFrame {
 
     private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
         System.out.println(r1.toString());
-        Mensajes men1 = new Mensajes(lista_switch.get(1),r,m1,
-               m_ip_origen.getText(),
-               m_ip_destino.getText(),
-               m_titulo.getText(),
-               m_contenido.getText())
+        Mensajes men1 = new Mensajes(lista_switch.get(1).getV_transmision(),
+               lista_switch.get(1).getV_recepcion(),
+               r1.getVr(),
+               r1.getVt(),
+               m1,
+               m_ip_origen1.getText(),
+               m_ip_destino1.getText(),
+               m_titulo1.getText(),
+               m_contenido1.getText())
                ;
        JOptionPane.showMessageDialog(s2,"Mensaje Enviado");
        Thread proceso1 = new Thread(men1);
@@ -983,7 +987,11 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton8MouseClicked
 
     private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
-       Mensajes menc = new Mensajes(lista_switch.get(0),r,m2,
+       Mensajes menc = new Mensajes(lista_switch.get(0).getV_transmision(),
+               lista_switch.get(0).getV_recepcion(),
+               r.getVr(),
+               r.getVt(),
+               m2,
                m_ip_origen1.getText(),
                m_ip_destino1.getText(),
                m_titulo1.getText(),
